@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fancify Shamcify</title>
+ 
+		<!-- link to your script file here -->
+		<script src="fancifymytext.js"></script>
+	</head>
+ 
+	<body>
+		<h1>Fancify my Text</h1>
+ 
+		<!-- Text input fieldset -->
+		<fieldset>
+			<legend>Text</legend>
+			<!-- textarea with id so JS can find it, 4 rows by 30 cols as required -->
+			<textarea id="mytext" rows="4" cols="30"></textarea>
+		</fieldset>
+ 
+		<!-- Fancify controls fieldset -->
+		<fieldset>
+			<legend>Fancify</legend>
+ 
+			<!-- Bigger button calls bigger() in JS -->
+			<button onclick="bigger()">Bigger!</button>
+ 
+			<!-- Moo button calls moo() in JS -->
+			<button onclick="moo()">Moo</button>
+ 
+			<br><br>
+ 
+			<!-- Radio buttons both named "style" so only one can be selected at a time -->
+			<!-- onchange fires whenever the user switches between them -->
+			<input type="radio" id="fancyShmancy" name="style" onchange="fancify()">
+			<label for="fancyShmancy">FancyShmancy</label>
+ 
+			<input type="radio" id="boringBetty" name="style" onchange="fancify()">
+			<label for="boringBetty">BoringBetty</label>
+		</fieldset>
+ 
+	</body>
+</html>
