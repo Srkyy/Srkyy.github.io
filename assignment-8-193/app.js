@@ -20,5 +20,31 @@ app.get('/math/circle/:r', function(req, res) {
   });
 });
  
+
+
+
+// Exercise 2: GET /hello/name
+// Takes 'first' and 'last' as query parameters and responds with a greeting.
+// If either parameter is missing, responds with a 400 error listing what's missing.
+app.get('/hello/name', function(req, res) {
+  const first = req.query.first;
+  const last = req.query.last;
+ 
+  // Check which parameters are missing and build the error message accordingly
+  if (!first && !last) {
+    // Both are missing
+    res.status(400).type('text').send('Missing Required GET parameters: first, last');
+  } else if (!first) {
+    // Only first name is missing
+    res.status(400).type('text').send('Missing Required GET parameters: first');
+  } else if (!last) {
+    // Only last name is missing
+    res.status(400).type('text').send('Missing Required GET parameters: last');
+  } else {
+    // Both parameters are present — send the greeting
+    res.type('text').send(`Hello ${first} ${last}`);
+  }
+});
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT);
